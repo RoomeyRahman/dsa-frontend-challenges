@@ -1,6 +1,10 @@
 'use client';
+import React, { useState } from 'react';
+
 
 export default function Home() {
+	const [isSuccess, setIsSuccess] = useState(false);
+	const [isError, setIsError] = useState(false);
 	interface formDataType { [key: string]: FormDataEntryValue }
 	const responseBody: formDataType = {}
 
@@ -9,6 +13,24 @@ export default function Home() {
 		const formData = new FormData(e.currentTarget as HTMLFormElement)
 		formData.forEach((value, property: string) => responseBody[property] = value);
 		console.log(responseBody)
+
+		const isSuccessCase = Math.random() < 0.9;
+
+		if (isSuccessCase) {
+			setIsSuccess(true);
+			setIsError(false);
+
+			setTimeout(() => {
+				setIsSuccess(false);
+			}, 3000);
+		} else {
+			setIsError(true);
+			setIsSuccess(false);
+
+			setTimeout(() => {
+				setIsError(false);
+			}, 3000);
+		}
 	}
 
 	return (
@@ -36,6 +58,17 @@ export default function Home() {
 						</div>
 						<button type="submit" className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-700 sm:w-fit hover:bg-black-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
 					</form>
+					{isSuccess && (
+						<div className="bg-green-300 p-2 mt-4 text-green-800">
+							Success! Your message has been sent.
+						</div>
+					)}
+
+					{isError && (
+						<div className="bg-red-300 p-2 mt-4 text-red-800">
+							Error! Something went wrong. Please try again.
+						</div>
+					)}
 				</div>
 			</section>
 		</>
