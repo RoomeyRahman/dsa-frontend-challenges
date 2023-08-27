@@ -2,6 +2,8 @@
 
 import React from 'react';
 import ImageGallery from '../../components/gallery';
+import Header from '../../components/header';
+
 
 interface Image {
   src: string;
@@ -22,10 +24,13 @@ const images: Image[] = [
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="App">
-        <h1>Image Gallery</h1>
-        <ImageGallery images={images} />
+    <main>
+      <Header />
+      <div className="flex min-h-screen flex-col items-center justify-between p-24">
+        <div className="App">
+          <h1>Image Gallery</h1>
+          <ImageGallery images={images} />
+        </div>
       </div>
     </main>
   )

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Modal from '../components/modal';
+import Header from '../components/header';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,8 +39,14 @@ export default function Home() {
   );
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <button onClick={openModal}>Open Modal</button>
+    <main className="flex min-h-screen flex-col items-center">
+      <Header />
+      <button
+        className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded shadow-md focus:outline-none my-10"
+        onClick={openModal}
+      >
+        Open Modal
+      </button>
       <Modal
         isOpen={isModalOpen}
         onClose={closeModal}

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import CarouselSlider from '../../components/carousel-slider';
+import Header from '../../components/header';
 
 const App: React.FC = () => {
   const images = [
@@ -11,8 +12,10 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 mt-8">
-      <CarouselSlider images={images} />
+    <div><Header />
+      <div className="container mx-auto px-4 mt-8">
+        <CarouselSlider images={images} />
+      </div>
     </div>
   );
 };
