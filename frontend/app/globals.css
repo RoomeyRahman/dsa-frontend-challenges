@@ -32,3 +32,44 @@
   display: flex;
 }
 
+.thumbnail {
+  position: relative;
+  width: 100%;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.thumbnail-title {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -20px;
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 20px;
+  background-clip: padding-box;
+}
+
+@media (max-width: 576px) {
+  .my-masonry-grid_column {
+    padding-left: 0;
+  }
+}
+

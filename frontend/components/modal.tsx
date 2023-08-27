@@ -4,6 +4,7 @@ const Modal = ({ isOpen, onClose, title, content, buttons }: any) => {
     const [isModalOpen, setIsModalOpen] = useState(isOpen);
 
     useEffect(() => {
+        setIsModalOpen(isOpen);
         const handleEscape = (event: KeyboardEvent) => {
           if (event.key === 'Escape') {
             closeModal();
@@ -29,11 +30,6 @@ const Modal = ({ isOpen, onClose, title, content, buttons }: any) => {
         };
       }, [isOpen]);
     
-
-    useEffect(() => {
-        setIsModalOpen(isOpen);
-    }, [isOpen]);
-
     const closeModal = () => {
         setIsModalOpen(false);
         onClose();
