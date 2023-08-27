@@ -18,17 +18,50 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+This will start the application and make it accessible at http://localhost:3000.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Routes and Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The application has the following routes and features:
 
-## Deploy on Vercel
+### `/`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Description: This route displays a page with a button that triggers a modal when clicked.
+- Functionality: Clicking the button opens a modal.
+- Components: Modal component.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### `/contact`
+
+- Description: This route displays a contact form.
+- Functionality: Users can fill out the form to contact the website.
+- Components: ContactForm component.
+
+### `/gallery`
+
+- Description: This route displays an image grid gallery.
+- Functionality: Images are displayed in a responsive grid layout.
+- Components: ImageGrid component.
+
+### `/carousel`
+
+- Description: This route displays an image carousel.
+- Functionality: Images are displayed in a carousel with navigation arrows and slide indicators.
+- Components: CarouselSlider component.
+
+## Dependencies
+
+The application uses various dependencies for its functionality. The main dependencies are:
+
+- React: A JavaScript library for building user interfaces.
+- React Router: For handling routing within the application.
+- [Additional dependencies for modal, contact form, image grid, and carousel]
+
+## Contributing
+
+Contributions are welcome! If you find any issues or want to add new features, feel free to submit a pull request.
+
+## License
+
+This project is licensed under the [Your License Name] License - see the [LICENSE](LICENSE) file for details.
+
